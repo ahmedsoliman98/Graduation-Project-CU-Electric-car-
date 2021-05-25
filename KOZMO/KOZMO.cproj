@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>6.0</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8</ToolchainName>
+    <ProjectGuid>{1a39e755-e862-4232-99cf-442320cdab9d}</ProjectGuid>
+    <avrdevice>ATmega32A</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>KOZMO</AssemblyName>
+    <Name>KOZMO</Name>
+    <RootNamespace>KOZMO</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <OverrideVtorValue />
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <AsfVersion>3.5.0</AsfVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>m</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>../MCAL/HeaderFile</Value>
+            <Value>../MCAL/SourceFile</Value>
+            <Value>../HAL/HeaderFile</Value>
+            <Value>../HAL/SourceFile</Value>
+            <Value>../Service</Value>
+            <Value>../Application/HeaderFile</Value>
+            <Value>../Application/SourceFile</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize most (-O3)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>m</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Application\HeaderFile\SectionA.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Application\SourceFile\SectionA.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\HeaderFile\L298N_MotorDriver.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\SourceFile\L298N_MotorDriver.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="KOZMO.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\HeaderFile\ATmega32A_Config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\HeaderFile\ATmega32A_DIO_Config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\HeaderFile\ATmega32A_Interrupt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\HeaderFile\ATmega32A_Timers_Config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\HeaderFile\ATmega32A_USART.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\SourceFile\ATmega32A_DIO_Config.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\SourceFile\ATmega32A_Interrupt.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\SourceFile\ATmega32A_Timers_Config.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\SourceFile\ATmega32A_USART.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Service\Macro.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Service\StandardDataType.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Application\HeaderFile" />
+    <Folder Include="Application\SourceFile" />
+    <Folder Include="HAL\HeaderFile" />
+    <Folder Include="HAL\SourceFile" />
+    <Folder Include="MCAL" />
+    <Folder Include="HAL" />
+    <Folder Include="MCAL\HeaderFile" />
+    <Folder Include="MCAL\SourceFile" />
+    <Folder Include="Application" />
+    <Folder Include="Service" />
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
