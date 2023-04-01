@@ -1,13 +1,2 @@
 # Graduation-Project-CU-Electric-car-
-The main control unit of the fully electric car
-
- the project is to make a proto type to the fylly electrical car with feature of the self driving using the image processin so 
- we divide the project into to stages one is the driver case in this case we make a simulation to the manule case driving is to control the casr using a mobile application so the control
- unit have the UART communication protocol driver to make it able to communicate with the mobile using Bluetooth module 
- 
- the Secound stage is the autonomous driving this case is used a real concurese feature by make another microcontroller "rasberry pi " responsible for the image processing the it 
- send the data to our main unit ATmega32A to dicide the motion function 
- 
- motion function is divided to many varite in the speed depend on the data recieve from the other microcontroller control unit decide which one to opreate 
- forward and reverce unction have the car full speed in case of autonomous but in the left and right it divided into a three case for each direction each case different in the angle 
- that happen used PWM output differen in eac  side of motor using Timer 0 & 2 
+This project aims to develop a prototype fully electric car with self-driving features using image processing. The project is divided into two stages. In the first stage, the driver case, a simulation is used to control the car using a mobile application. The control unit includes a UART communication protocol driver to enable communication with the mobile app via a Bluetooth module. In the second stage, the autonomous driving case, a separate microcontroller (Raspberry Pi) is responsible for image processing and sends data to the main control unit (ATmega32A) to determine motion functions. Motion functions are divided into various speed and directional cases, with forward and reverse functions operating at full speed during autonomous mode. Left and right directional cases are divided into three cases each, with PWM output and Timer 0 & 2 used to control motor angle and speed. This project represents a significant advancement in the development of self-driving electric cars and lays the foundation for future innovation in the field.
